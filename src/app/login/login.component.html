@@ -1,0 +1,12 @@
+<asl-google-signin-button *ngIf="!user"></asl-google-signin-button>
+<div *ngIf="user">
+    <img src="{{ user.photoUrl }}">
+    <h4> {{ user.name }} </h4>
+    <p>{{ user.email }} </p>
+</div>
+<div *ngIf="!user">
+    <button (click)="loginFacebook()">FACEBOOK</button>
+</div>
+<div *ngIf="user">
+    <button (click)="signOut()">CERRAR SESION</button>
+</div>
